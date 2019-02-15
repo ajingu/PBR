@@ -21,10 +21,14 @@ function init(){
     controls.dampingFactor = 0.2;
 
     const mesh = new THREE.Mesh(
-        new THREE.BoxGeometry(300, 300, 300),
-        new THREE.MeshNormalMaterial()
+        new THREE.SphereGeometry(100, 30, 30),
+        new THREE.MeshStandardMaterial({color: 0x00FFFF})
     );
     scene.add(mesh);
+
+    const light = new THREE.DirectionalLight(0xFFFFFF);
+    light.position.set(1, 1, 1);
+    scene.add(light);
 
     tick();
 
